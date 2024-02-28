@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   Card,
@@ -31,6 +32,7 @@ const signupValidationSchema = object({
     .required("Repeat password is required"),
 });
 function SignUp() {
+  const navigate = useNavigate();
   return (
     <div>
       <Container>
@@ -53,6 +55,7 @@ function SignUp() {
               onSubmit={(values) => {
                 console.log(values);
                 sessionStorage.setItem("user", JSON.stringify(values));
+                navigate("/");
               }}
             >
               {() => (

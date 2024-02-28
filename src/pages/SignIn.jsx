@@ -50,7 +50,13 @@ function SignIn() {
                 ) {
                   alert("Sign In Success");
                 } else {
-                  alert("Sign In Fail");
+                  if (userName !== values.username) {
+                    alert("UserName not exist");
+                  } else {
+                    if (password !== values.password) {
+                      alert("Password not match");
+                    }
+                  }
                 }
               }
             }}
